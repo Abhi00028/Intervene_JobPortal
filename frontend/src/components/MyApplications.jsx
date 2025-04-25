@@ -34,7 +34,11 @@ const MyApplications = () => {
   }, [dispatch, error, message]);
 
   const handleDeleteApplication = (id) => {
-    dispatch(deleteApplication(id));
+    console.log("Delete Application", id);
+    
+    dispatch(deleteApplication(id)).then(() => {
+      dispatch(fetchJobSeekerApplications()); // Refresh the list after deletion
+    });
   };
 
   return (
@@ -85,8 +89,8 @@ const MyApplications = () => {
                       </button>
                       <Link
                         to={
-                          element.jobSeekerInfo &&
-                          element.jobSeekerInfo.resume.url
+                          element?.jobSeekerInfo &&
+                          element?.jobSeekerInfo?.resume?.url
                         }
                         className="btn"
                         target="_blank"

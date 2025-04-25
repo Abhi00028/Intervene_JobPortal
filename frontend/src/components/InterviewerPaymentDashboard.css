@@ -1,0 +1,265 @@
+.payment-dashboard {
+  background-color: #f4f7fc;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+  margin: 40px auto;
+}
+
+.payment-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.balance-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.earnings-label {
+  font-size: 16px;
+  color: #777;
+}
+
+.earnings-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+  margin-top: 5px;
+}
+
+.withdraw-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.withdraw-label {
+  font-size: 16px;
+  color: #777;
+}
+
+.withdraw-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.withdraw-input:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+.withdraw-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.withdraw-button:hover {
+  background-color: #45a049;
+}
+
+.withdraw-button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4caf50;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Payment History Styles */
+.payment-history {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.payment-list {
+  margin-top: 1rem;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.payment-item:hover {
+  background: #f9f9f9;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-amount {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.payment-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.payment-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.failed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.refresh-button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.refresh-button:hover {
+  background: #f0f0f0;
+}
+
+/* Payment Modal Styles */
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.status-text {
+  font-weight: bold;
+}
+
+.status-text.pending {
+  color: #ffc107;
+}
+
+.status-text.success {
+  color: #28a745;
+}
+
+.status-text.failed {
+  color: #dc3545;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.status-button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-on-paypal {
+  padding: 0.5rem 1rem;
+  background: #003087;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+  

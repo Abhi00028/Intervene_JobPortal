@@ -32,6 +32,9 @@ const Applications = () => {
   const handleDeleteApplication = (id) => {
     dispatch(deleteApplication(id));
   };
+  
+
+console.log("Applications:", applications);
 
   return (
     <>
@@ -45,6 +48,7 @@ const Applications = () => {
             <h3>Applications For Your Posted Jobs</h3>
             <div className="applications_container">
               {applications.map((element) => {
+                console.log("Resume URL:", element.jobSeekerInfo?.resume?.url);
                 return (
                   <div className="card" key={element._id}>
                     <p className="sub-sec">
@@ -82,13 +86,15 @@ const Applications = () => {
                         Delete Application
                       </button>
                       <Link
-                        to={
-                          element.jobSeekerInfo &&
-                          element.jobSeekerInfo.resume.url
+                        to={(element?.jobSeekerInfo?.resume?.url) || "#" 
+                          
                         }
                         className="btn"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        
                       >
+                        
                         View Resume
                       </Link>
                     </div>

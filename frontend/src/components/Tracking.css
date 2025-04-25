@@ -1,0 +1,160 @@
+
+
+
+/* Status Bar Styles */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.status-bar::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+/* Green bar for shortlisted */
+.status-bar.shortlisted::before {
+  background-color: #28a745;
+}
+
+/* Red bar for rejected */
+.status-bar.rejected::before {
+  background-color: #dc3545;
+}
+
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-width: 60px;
+}
+
+.step-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin-bottom: 0.5rem;
+  border: 3px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Active step styling */
+.status-step.active .step-circle {
+  background-color: #166088;
+  border-color: #166088;
+}
+
+.status-step.active .step-label {
+  color: #166088;
+  font-weight: 500;
+}
+
+/* Shortlisted final step */
+.status-step.final.shortlisted .step-circle,
+.status-bar.shortlisted .status-step.active .step-circle {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.status-step.final.shortlisted .step-label,
+.status-step.final.shortlisted .final-decision,
+.status-bar.shortlisted .status-step.active .step-label {
+  color: #28a745;
+  font-weight: 500;
+}
+
+/* Rejected final step */
+.status-step.final.rejected .step-circle,
+.status-bar.rejected .status-step.active .step-circle {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.status-step.final.rejected .step-label,
+.status-step.final.rejected .final-decision,
+.status-bar.rejected .status-step.active .step-label {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.final-decision {
+  font-size: 0.7rem;
+  text-transform: capitalize;
+  margin-top: 0.2rem;
+  font-weight: bold;
+}
+
+/* Applicant Card Styles */
+.applicant-tracking-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tracking-header {
+  color: #166088;
+  font-weight: 600;
+}
+
+.applicant-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.applicant-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .status-bar {
+    padding: 0;
+  }
+  
+  .status-bar::before {
+    left: 5%;
+    right: 5%;
+  }
+  
+  .step-label {
+    font-size: 0.65rem;
+  }
+  
+  .final-decision {
+    font-size: 0.6rem;
+  }
+  
+  .applicant-tracking-container {
+    padding: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+

@@ -49,6 +49,18 @@ const applicationSchema = new mongoose.Schema({
       required: true,
     },
   },
+  interviewerInfo: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: false,
+    },
+    role: {
+      type: String,
+      enum: ["Interviewer"],
+      required: false,
+    },
+  },
   jobInfo: {
     jobId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -65,6 +77,10 @@ const applicationSchema = new mongoose.Schema({
       default: false,
     },
     employer: {
+      type: Boolean,
+      default: false,
+    },
+    interviewer: {
       type: Boolean,
       default: false,
     },

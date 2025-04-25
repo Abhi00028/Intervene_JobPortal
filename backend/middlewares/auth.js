@@ -26,4 +26,11 @@ export const isAuthorized = (...roles) => {
     }
     next();
   };
+  
+};
+export const isInterviewer = (req, res, next) => {
+  if (req.user.role !== "Interviewer") {
+    return next(new ErrorHandler("Access denied. Only Interviewers are allowed.", 403));
+  }
+  next();
 };

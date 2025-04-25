@@ -136,7 +136,7 @@ const PostApplication = () => {
               </div>
               <div>
                 <label>Resume</label>
-                <input type="file" onChange={resumeHandler} />
+                <input type="file" onChange={resumeHandler} required />
               </div>
             </>
           )}

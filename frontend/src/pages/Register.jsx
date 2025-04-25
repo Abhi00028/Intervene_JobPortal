@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { clearAllUserErrors, register } from "../store/slices/userSlice";
@@ -104,6 +104,7 @@ const Register = () => {
                     <option value="">Select Role</option>
                     <option value="Employer">Register as an Employer</option>
                     <option value="Job Seeker">Register as a Job Seeker</option>
+                    <option value="Interviewer">Register as an Interviewer</option>
                   </select>
                   <FaRegUser />
                 </div>

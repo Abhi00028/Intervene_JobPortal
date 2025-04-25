@@ -14,14 +14,16 @@ const Footer = () => {
     <>
       <footer>
         <div>
-          <img src="/logo.png" alt="logo" />
+        <Link to="/"> {/* Changed from <a> to <Link> */}
+            <img src="/logo.svg" alt="logo" />
+          </Link>
         </div>
         <div>
           <h4>Support</h4>
           <ul>
-            <li>Street No.007 Shahrah-e-Faisal Karachi, Pakistan</li>
-            <li>nichenest@gmail.com</li>
-            <li>+92 3106507521</li>
+            <li>1049 Wallbrook Crescent , Milton , GTA Region Canada</li>
+            <li>abhishek207bhardwaj@gmail.com</li>
+            <li>+1 5195035948</li>
           </ul>
         </div>
 
@@ -34,6 +36,9 @@ const Footer = () => {
             <li to={"/jobs"}>
               <Link>Jobs</Link>
             </li>
+            <li>
+                <Link to={"/AboutPage"}>About Team</Link>
+              </li>
             {isAuthenticated && (
               <li>
                 <Link to={"/dashboard"}>Dashboard</Link>
@@ -80,7 +85,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="copyright">
-        &copy; CopyRight 2024. All Rights Reserved By CodeWithZeeshu
+        &copy; CopyRight 2025. All Rights Reserved By Abhishek Bhardwaj
       </div>
     </>
   );

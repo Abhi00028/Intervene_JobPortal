@@ -1,0 +1,141 @@
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slideshow-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  /* Slides */
+  .slideshow {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 400px;
+  }
+  
+  .slide {
+    min-width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slide-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .slide-icon-container {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-right: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+  }
+  
+  .slide-text {
+    flex: 1;
+  }
+  
+  .job-seeker-badge { 
+    background-color: #3498db;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .recruiter-badge { 
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .interviewer-badge { 
+    background-color: #9b59b6;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .slide-text p {
+    margin-bottom: 1rem;
+    color: #7f8c8d;
+  }
+  
+  .slide-stats {
+    font-size: 0.9rem;
+    color: #95a5a6;
+  }
+  
+  .slide-button {
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s;
+  }
+  
+  .slide-button:hover {
+    background-color: #1a252f;
+  }
+  
+  /* Dots navigation */
+  .slideshow-dots {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: #2c3e50;
+  }
+  
+  .dot:hover {
+    background-color: #7f8c8d;
+  }

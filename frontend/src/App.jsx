@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -12,15 +12,23 @@ import PostApplication from "./pages/PostApplication";
 import Register from "./pages/Register";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useDispatch } from "react-redux";
-import { getUser } from "./store/slices/userSlice";
+// import { useDispatch } from "react-redux";
+// import { getUser } from "./store/slices/userSlice";
+import InterviewerDashboard from "./components/InterviewerDashboard";
+import ApplicantsListPage from "./pages/ApplicantsListPage";
+import InterviewerPaymentDashboard from "./components/InterviewerPaymentDashboard";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import ApplicantTracking from "./components/ApplicantTracking";
+import AboutPage from "./components/AboutPage";
+
+// In your routes
 
 const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getUser());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getUser());
+  // }, []);
 
   return (
     <>
@@ -30,6 +38,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/interviewer-dashboard" element={<InterviewerDashboard />} />
+          <Route path="/interviewer-payment-dashboard" element={<InterviewerPaymentDashboard />} /> {/* Add the route */}
+          <Route path="/job/:jobId/applicants" element={<ApplicantsListPage />} />
+<Route path="/job/:jobId/tracking" element={<ApplicantTracking />} />
           <Route
             path="/post/application/:jobId"
             element={<PostApplication />}
@@ -37,6 +49,9 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/AboutPage" element={<AboutPage/>} />
+          {/* Add other routes here */}
+          
         </Routes>
         <Footer />
         <ToastContainer position="top-right" theme="dark" />

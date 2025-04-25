@@ -9,6 +9,7 @@ const userSlice = createSlice({
     user: {},
     error: null,
     message: null,
+    role: null,
   },
   reducers: {
     registerRequest(state, action) {
@@ -125,12 +126,17 @@ export const login = (data) => async (dispatch) => {
 };
 
 export const getUser = () => async (dispatch) => {
+  const token = localStorage.getItem("token");
   dispatch(userSlice.actions.fetchUserRequest());
   try {
     const response = await axios.get(
       "http://localhost:4000/api/v1/user/getuser",
       {
         withCredentials: true,
+        headers: { 
+          "Authorization": `Bearer ${token}`,  // If token is required
+          "Content-Type": "application/json"    // Ensure correct content type
+        },
       }
     );
     dispatch(userSlice.actions.fetchUserSuccess(response.data.user));

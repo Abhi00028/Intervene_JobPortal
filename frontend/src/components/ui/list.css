@@ -1,0 +1,132 @@
+.jobs {
+    background-color: #f9fafb;
+    padding: 2rem;
+}
+
+.jobs_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Increased gap for better separation */
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Added prominent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-weight: bold;
+    color: #1f2937;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.company,
+.location {
+    color: #4b5563;
+    margin-bottom: 0.3rem;
+}
+
+.btn-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+.bg-green-500 {
+    background-color: #10b981;
+}
+
+.bg-green-500:hover {
+    background-color: #059669;
+}
+
+.bg-blue-500 {
+    background-color: #3b82f6;
+}
+
+.bg-blue-500:hover {
+    background-color: #2563eb;
+}
+
+
+
+/*  */
+
+/* In your list.css or any global stylesheet */
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 1050;
+}
+
+.modal-dialog-centered {
+    z-index: 1051;
+    position: relative;
+}
+/* Ensure the modal is centered and overlay is visible */
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.7) !important; /* Ensuring overlay visibility */
+    z-index: 1050;
+}
+
+.ReactModal__Content {
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    z-index: 1051; /* Ensure modal content is on top of overlay */
+    background-color: #ffffff; /* White background for the modal */
+}
+
+/* Optional: Styling the modal header and footer to match your design */
+.ReactModal__Header {
+    background-color: #007bff;
+    color: white;
+}
+
+.ReactModal__Footer {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { clearAllUserErrors, login } from "../store/slices/userSlice";
@@ -53,6 +53,7 @@ const Login = () => {
                   <option value="">Select Role</option>
                   <option value="Employer">Login as an Employer</option>
                   <option value="Job Seeker">Login as a Job Seeker</option>
+                  <option value="Interviewer">Register as an Interviewer</option>
                 </select>
                 <FaRegUser />
               </div>

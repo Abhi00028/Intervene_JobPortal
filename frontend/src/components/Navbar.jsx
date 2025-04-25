@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,7 +9,9 @@ const Navbar = () => {
     <>
       <nav className={show ? "navbar show_navbar" : "navbar"}>
         <div className="logo">
-          <img src="/logo.png" alt="logo" />
+          <Link to="/"> 
+                      <img src="/logo.svg" alt="logo" />
+                    </Link>
         </div>
         <div className="links">
           <ul>

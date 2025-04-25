@@ -8,6 +8,7 @@ import {
   resetJobSlice,
 } from "../store/slices/jobSlice";
 import { CiCircleInfo } from "react-icons/ci";
+import cities from "../data/canadianCities.json";
 
 const JobPost = () => {
   const [title, setTitle] = useState("");
@@ -47,28 +48,28 @@ const JobPost = () => {
     "IT Consulting",
   ];
 
-  const cities = [
-    "Karachi",
-    "Lahore",
-    "Islamabad",
-    "Rawalpindi",
-    "Faisalabad",
-    "Multan",
-    "Hyderabad",
-    "Quetta",
-    "Peshawar",
-    "Sialkot",
-    "Gujranwala",
-    "Sargodha",
-    "Bahawalpur",
-    "Sukkur",
-    "Mardan",
-    "Mingora",
-    "Sheikhupura",
-    "Mandi Bahauddin",
-    "Larkana",
-    "Nawabshah",
-  ];
+  // const cities = [
+  //   "Karachi",
+  //   "Lahore",
+  //   "Islamabad",
+  //   "Rawalpindi",
+  //   "Faisalabad",
+  //   "Multan",
+  //   "Hyderabad",
+  //   "Quetta",
+  //   "Peshawar",
+  //   "Sialkot",
+  //   "Gujranwala",
+  //   "Sargodha",
+  //   "Bahawalpur",
+  //   "Sukkur",
+  //   "Mardan",
+  //   "Mingora",
+  //   "Sheikhupura",
+  //   "Mandi Bahauddin",
+  //   "Larkana",
+  //   "Nawabshah",
+  // ];
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const { loading, error, message } = useSelector((state) => state.jobs);
@@ -132,7 +133,7 @@ const JobPost = () => {
         <select value={location} onChange={(e) => setLocation(e.target.value)}>
           <option value="">Select Job Type</option>
           {cities.map((element) => {
-            return <option value={element}>{element}</option>;
+            return <option key={element} value={element}>{element}</option>;
           })}
         </select>
       </div>
@@ -191,7 +192,7 @@ const JobPost = () => {
         <select value={jobNiche} onChange={(e) => setJobNiche(e.target.value)}>
           <option value="">Select Job Niche</option>
           {nichesArray.map((element) => {
-            return <option value={element}>{element}</option>;
+            return <option key={element} value={element}>{element}</option>;
           })}
         </select>
       </div>

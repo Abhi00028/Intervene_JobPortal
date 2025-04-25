@@ -11,6 +11,8 @@ import MyJobs from "../components/MyJobs";
 import JobPost from "../components/JobPost";
 import Applications from "../components/Applications";
 import MyApplications from "../components/MyApplications";
+import InterviewerDashboard from "../components/InterviewerDashboard";
+import ApplicantTracking from "../components/ApplicantTracking";
 
 const Dashboard = () => {
   const [show, setShow] = useState(false);
@@ -36,6 +38,7 @@ const Dashboard = () => {
       navigateTo("/");
     }
   }, [dispatch, error, loading, isAuthenticated]);
+console.log("User:", user);
 
   return (
     <>
@@ -117,6 +120,7 @@ const Dashboard = () => {
                   </button>
                 </li>
               )}
+             
               {user && user.role === "Job Seeker" && (
                 <li>
                   <button
@@ -126,6 +130,18 @@ const Dashboard = () => {
                     }}
                   >
                     My Applications
+                  </button>
+                </li>
+              )}
+              {user && user.role === "Interviewer" && (
+                <li>
+                  <button
+                    onClick={() => {
+                      setComponentName("Interviewer Dashboard");
+                      setShow(!show);
+                    }}
+                  >
+                    Interviewer Dashboard
                   </button>
                 </li>
               )}
@@ -165,8 +181,14 @@ const Dashboard = () => {
                 case "Applications":
                   return <Applications />;
                   break;
+                 
+                  
+
                 case "My Applications":
                   return <MyApplications />;
+                  break;
+                case "Interviewer Dashboard":
+                  return <InterviewerDashboard />;
                   break;
 
                 default:
