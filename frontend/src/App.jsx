@@ -24,12 +24,7 @@ import AboutPage from "./components/AboutPage";
 // In your routes
 
 const App = () => {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getUser());
-  // }, []);
-
+  
   return (
     <>
       <Router>
